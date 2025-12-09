@@ -1,6 +1,6 @@
 import os
 
-from common.constants import CORRECT, WRONG, YEAR
+from common.constants import CORRECT, WRONG, YEAR, REPO
 
 
 def get_readme_path() -> str:
@@ -32,12 +32,12 @@ def write_readme_solution_links(main_methods: dict[int, list]):
         main = [r for r in day_methods if not r.get("alternate") and r.get("main")][0]
         alt = [r for r in day_methods if r.get("alternate") and r.get("main")]
         lines.append(
-            f"{day}. https://github.com/bencart/advent-of-python/blob/main/src/aoc_{YEAR}/{main["path"]}.py"
+            f"{day}. {REPO}/blob/main/src/aoc_{YEAR}/{main["path"]}.py"
         )
         if alt:
             for r in alt:
                 lines.append(
-                    f"    - https://github.com/bencart/advent-2024/blob/main/src/aoc_{YEAR}/{r["path"]}.py"
+                    f"    - {REPO}/blob/main/src/aoc_{YEAR}/{r["path"]}.py"
                 )
     write_lines(lines + [""])
 
