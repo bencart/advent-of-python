@@ -1,0 +1,17 @@
+# python junk
+__pycache__/
+*.pyc
+
+# pycharm
+.idea/
+
+# venv
+.venv
+
+# macos junk
+.DS_Store
+
+# private stuff
+.env
+data/
+
